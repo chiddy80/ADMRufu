@@ -34,7 +34,7 @@ SCPinstal="$HOME/install"
 cp -f "$0" "${ADMRufu}/install.sh"
 rm -f "$(pwd)/$0" &>/dev/null
 
-time_reboot(){
+time_reboot()
   print_center -ama "REINICIANDO VPS EN $1 SEGUNDOS"
   REBOOT_TIMEOUT="$1"
   
