@@ -30,17 +30,15 @@ SCPinstal="$HOME/install"
 
 #rm -rf /etc/localtime &>/dev/null
 #ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
-cp -f $0 ${ADMRufu}/install.sh
-rm $(pwd)/$0 &> /dev/null
-echo ">> License check disabled (author mode)"
-sleep 1
- }
+
+cp -f "$0" "${ADMRufu}/install.sh"
+rm -f "$(pwd)/$0" &>/dev/null
 
 time_reboot(){
   print_center -ama "REINICIANDO VPS EN $1 SEGUNDOS"
   REBOOT_TIMEOUT="$1"
   
-  while [ $REBOOT_TIMEOUT -gt 0 ]; do
+  while [ "$REBOOT_TIMEOUT" -gt 0 ]; do
      print_center -ne "-$REBOOT_TIMEOUT-\r"
      sleep 1
      : $((REBOOT_TIMEOUT--))
