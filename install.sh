@@ -32,15 +32,8 @@ SCPinstal="$HOME/install"
 #ln -s /usr/share/zoneinfo/America/Argentina/Tucuman /etc/localtime &>/dev/null
 cp -f $0 ${ADMRufu}/install.sh
 rm $(pwd)/$0 &> /dev/null
-if [[ $(which install-LIC) = "" ]]; then
-  wget -O /usr/bin/install-LIC 'https://github.com/rudi9999/Rufu-LIC/raw/main/install-LIC'; chmod +x /usr/bin/install-LIC &>/dev/null
-fi
-install-LIC
-[[ $? = 1 ]] && exit
-
-stop_install(){
-  title "INSTALACION CANCELADA"
-  exit
+echo ">> License check disabled (author mode)"
+sleep 1
  }
 
 time_reboot(){
